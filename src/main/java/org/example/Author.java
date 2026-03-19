@@ -2,6 +2,7 @@ package org.example;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
@@ -9,9 +10,12 @@ import java.math.BigDecimal;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@EqualsAndHashCode
 public class Author {
     private String name;
+    @EqualsAndHashCode.Exclude
     private int age;
+    @EqualsAndHashCode.Exclude
     private BigDecimal wealth;
 
     public boolean isOld() {
